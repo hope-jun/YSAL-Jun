@@ -1,29 +1,152 @@
-<meta charset="utf-8">
-<header id="header">
-    <p>전희망을 소개합니다.</p>
-    <h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="style.css"> <!-- css 파일 링크 추가 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전희망 소개</title>
+    <!-- 구글 웹폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS 프레임 워크 추가 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+           /* 커스텀 블릿 */
+           li::before {
+            content: "✔"; /* 블릿 대신 체크마크 사용 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: green;
+            font-size: 18px; /* 크기 조정 */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        /* 드롭다운 메뉴 스타일 */
+        li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        li:hover ul {
+            display: block;  /* 마우스 올리면 드롭다운 보이기 */
+        }
+
+        li ul li {
+            display: block;
+            padding: 10px;
+        }
+
+        /* 드롭다운 항목에 마우스를 올리면 배경색 변화 */
+        li ul li:hover {
+            background-color: #f0f0f0;
+        }
+        .image-container {
+            width: 300px;
+            height: 300px;
+            border: 10px solid #000; /* 이미지의 경계를 구분 */
+            background-color: lightgray; /* 컨테이너 배경색 */
+            padding: 30px;
+            margin: 50px;
+        }
+        <ul>
+    <li>
+        메뉴 1
+        <ul>
+            <li>서브 메뉴 1-1</li>
+            <li>서브 메뉴 1-2</li>
+            <li>서브 메뉴 1-3</li>
+        </ul>
+    </li>
+    <li>메뉴 2</li>
+    <li>메뉴 3</li>
+</ul>
+
+        img {
+            width: 100%;
+            height: auto;
+            border: 5px solid red; /* 이미지의 테두리 */
+            padding: 20px; /* 이미지 내부 여백 */
+            margin: 30px; /* 이미지 외부 여백 */
+        }
+
+        /* Padding과 Margin 차이 확인용 */
+        .padding-box {
+            background-color: rgba(0, 255, 0, 0.3); /* Padding 영역 */
+            padding: 20px;
+        }
+
+        .margin-box {
+            background-color: rgba(255, 0, 0, 0.3); /* Margin 영역 */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100 text-gray-900">
+
+<header class="bg-blue-600 text-white p-6 text-center">
+    <p class="text-lg font-semibold">전희망을 소개합니다.</p>
+    <h1 class="text-3xl font-bold italic">
         <em>HEEMANG JUN</em>
     </h1>
 </header>
-<main id ="main">
-    <section id="visual"> 
-        <p>
-            <u>이름 : 전희망</u>
-        </p>
+
+<main class="p-6 max-w-screen-lg mx-auto bg-white">
+
+    <section id="visual" class="bg-gray-200 p-4 rounded-lg text-center mb-6">
+        <p class="text-xl underline">이름 : 전희망</p>
     </section>
 
-    <article id = "mainFunction">
-        응원하는 팀 : <br>
-        <li> <strong>Manchester UTD</strong> </li>
-        <li> <strong>INCHEON UTD</strong> </li>
-        <li> <strong>SSG LANDERS</strong> </li>
-        <li> <strong>ANYANG FC</strong> </li>
+    <article id="mainFunction" class="space-y-4 text-lg">
+        <ul>
+            <li>
+                메뉴 1
+                <ul>
+                    <li>서브 메뉴 1-1</li>
+                    <li>서브 메뉴 1-2</li>
+                    <li>서브 메뉴 1-3</li>
+                </ul>
+            </li>
+            <li>메뉴 2</li>
+            <li>메뉴 3</li>
+        </ul>
+        <p>응원하는 팀 :</p>
+        <ul class="list-none pl-0 space-y-2">
+            <li><strong class="text-blue-600">Manchester UTD</strong></li>
+            <li><strong class="text-blue-600">INCHEON UTD</strong></li>
+            <li><strong class="text-blue-600">SSG LANDERS</strong></li>
+            <li><strong class="text-blue-600">ANYANG FC</strong></li>
+        </ul>
+        <div class="image-container">
+            <div class="padding-box">
+                <img src="https://www.stnsports.co.kr/news/photo/202411/239187_251407_2235.jpg" alt="정웅이 Image">
+            </div>
+            <div class="margin-box">
+                <img src="https://basketkorea.com/news/data/20230201/p1065614580391490_869_thum.jpg" alt="준형이형 Image">
+            </div>
+        </div>
     </article>
 
 </main>
 
-
-<footer id="footer">
-    <br>
+<footer class="bg-gray-800 text-white text-center p-4">
     E-mail : jhmharry@yonsei.ac.kr
 </footer>
+
+</body>
+</html>
