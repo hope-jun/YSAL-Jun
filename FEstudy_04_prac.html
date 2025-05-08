@@ -30,7 +30,7 @@
         <div id="weather">Loading weather...
         </div>
         <script>
-        fetch('http://goweather.xyz/weather/Manchester')
+        fetch('https://corsproxy.io/?https://goweather.xyz/weather/Manchester')
             .then(response => response.json())
             .then(data => {
             const temperature = data.temperature;       
