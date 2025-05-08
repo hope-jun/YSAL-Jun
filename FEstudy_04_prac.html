@@ -1,0 +1,160 @@
+<!DOCTYPE html> <!-- 문서가 HTML5 문서임을 브라우저에 알려주는 선언문 -->
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>맨유 유로파 우승 기원</title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <!--스타일 지정-->
+    <link rel="stylesheet" href="style04.css"> 
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-inner">
+      <img src="favicon.png" alt="맨유 로고" class="logo">
+      <h1><em>Manchester United</em></h1>
+    </div>
+  </header>
+
+<main id="main">
+    <img src="https://assets.goal.com/images/v3/blt30b0e8d7b2ba394e/Social_16-9.jpg?auto=webp&format=pjpg&width=3840&quality=60" 
+    alt="맨유 이미지" 
+    style="width: 100%; height: auto; display: block;">
+    <section id="visual">
+        <span style="font-size: 40px; font-weight:900">Come on, United!</span>
+        <br><br> It’s Europa or nothing!<br>
+        Let’s bring the trophy back to Old Trafford — the reds were always meant to shine in Europe. 🔴🏆<br>
+        <a href="https://www.manutd.com/ko">Official homepage</a>
+    </section>
+    <div>
+        <!-- Weather display section -->
+        <div id="weather">Loading weather...
+        </div>
+        <script>
+        fetch('https://corsproxy.io/?https://goweather.xyz/weather/Manchester')
+            .then(response => response.json())
+            .then(data => {
+            const temperature = data.temperature;       
+            const description = data.description;     
+
+            let icon = "";
+            const descLower = description.toLowerCase();
+            if (descLower.includes("cloud")) {
+                icon = "⛅";
+            } 
+            if (descLower.includes("rain")) {
+                icon = "🌧️";
+            } 
+            if (descLower.includes("sun") || descLower.includes("clear")) {
+                icon = "☀️";
+            } 
+            if (descLower.includes("snow")) {
+                icon = "❄️";
+            }
+            const weatherDiv = document.getElementById('weather');
+            weatherDiv.innerHTML = `
+                <h2>Current Stadium Weather</h2>
+                <p>Manchester, UK: ${temperature} and ${description} ${icon}</p>
+            `;    })
+            .catch(error => {
+            console.error('Error fetching weather data:', error);
+            document.getElementById('weather').innerText = 'Unable to load weather data.';
+            });
+        </script>
+    </div>
+    <div class="container2">
+        <div id="player"></div>
+
+        <script>
+          // 1. API 불러오기
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/iframe_api";
+          document.body.appendChild(tag);
+        
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+              height: '405',
+              width: '720',
+              videoId: 'xwkAUvNSH_o', 
+              playerVars: { 
+                start: 941,            // 12초부터 시작
+                autoplay: 1,          // 자동 재생 (1: 사용, 0: 미사용)
+                mute: 1,              // 음소거 상태로 시작
+                controls: 0,          // 기본 컨트롤러 숨김 (0: 숨김, 1: 보임)
+                loop: 1,              // 반복 재생 (playlist 필수)
+                playlist: 'xwkAUvNSH_o', // loop 사용 시 영상 ID 반복 재생용
+                rel: 0,               // 관련 동영상 표시 안 함
+                modestbranding: 1,    // YouTube 로고 최소화
+                cc_load_policy: 0
+                },
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          }
+        
+          function onPlayerReady(event) {
+            event.target.playVideo(); // 자동재생
+          }
+        
+          function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+              alert('Video End');
+            }
+          }
+        </script>
+    </div>
+    
+    <div id="container">
+        <article id="mainFunction">
+          <h2>Manchester United: The Red Devils</h2>
+          <p>
+            Founded in 1878, Manchester United is one of the most successful and popular football clubs in the world. With 20 league titles and 3 Champions League trophies, the club is known for its winning spirit, iconic players, and loyal global fanbase. Their home, Old Trafford, is famously called the “Theatre of Dreams.”
+            Glory, glory Man United!          </p>
+          <button class="login-btn">Login</button>
+        </article>
+        <div>
+          <img src="https://i.guim.co.uk/img/media/04cc5a667cb872510be8a5f27bad040b2ebe9956/0_184_5416_3249/master/5416.jpg?width=1200&quality=85&auto=format&fit=max&s=13bad55144453d71d29a5171c7d1d5f4" alt="농구단 사진" class="side-image">
+        </div>
+    </div>
+
+
+</main>
+
+<footer id="footer">
+    I'm also a big fan of <strong>Manchester UTD / Incheon UTD / SSG Landers</strong> ⚽⚾️
+</footer>
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const step = 0.5; // 한 번에 움직일 픽셀 수
+      const maxScroll = 20; // 최대 이동 거리
+      let current = 0;
+
+      // 아래로 스크롤
+      const down = setInterval(() => {
+        window.scrollBy(0, step);
+        current += step;
+        if (current >= maxScroll) {
+          clearInterval(down);
+
+          // 잠깐 멈췄다가 다시 위로
+          setTimeout(() => {
+            const up = setInterval(() => {
+              window.scrollBy(0, -step);
+              current -= step;
+              if (current <= 0) {
+                clearInterval(up);
+              }
+            }, 10); // 위로 올라가는 속도
+          }, 100); // 아래로 멈춘 시간
+        }
+      }, 10); // 아래로 내려가는 속도
+    }, 1000); // 시작까지 1초 대기
+  });
+</script>
+</body>
+</html>
