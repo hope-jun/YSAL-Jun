@@ -29,7 +29,7 @@ body {
 #header {
     background-color: #c30405; /*맨 */
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -101,23 +101,31 @@ body {
 }
 /* 기본 링크 스타일 */
 a {
-    color: white;         /* 기본 텍스트 색상 */
-    text-decoration: none; /* 밑줄 제거 */
-    font-weight: lighter;
-    font-size:15px;
+    color:  #756302;          /* 밝은 핑크빛 흰색 느낌 */
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    transition: all 0.2s ease;
 }
+
 /* 방문한 링크 스타일 */
 a:visited {
-    color: white;
+    color: #756302 ;       /* 연한 로즈핑크 */
 }
+
 /* 마우스 오버 시 스타일 */
 a:hover {
-    color: ivory;
+    color: #FFEAEA;         /* 골드 */
     text-decoration: underline;
+    text-underline-offset: 3px;
 }
+
 /* 클릭(활성화) 시 스타일 */
 a:active {
-    color: green;
+    color: #DA291C;           /* 맨유 레드 */
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1px 4px;
+    border-radius: 4px;
 }
 #weather {
     padding: 20px;
@@ -131,3 +139,45 @@ a:active {
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.scroll-indicator {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #aa0000;
+  animation: bounce 1.5s infinite;
+  cursor: default;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+#header {
+    background-color: #DA291C; /* 맨유 레드 */
+    padding: 16px 32px;
+    color: white;
+    font-family: 'Oswald', 'Arial Black', sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  #header h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  
+  .logo {
+    width: 48px;
+    height: auto;
+  }
