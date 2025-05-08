@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #1c1c1c;
+}
+/* 중앙 정렬용 wrapper */
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+        background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+
+  #player {
+    margin-bottom: 10px;
+  }
+
+  #controls button {
+    padding: 8px 16px;
+    margin: 0 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+#header {
+    background-color: #c30405; /*맨 */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#header h1 em {
+    font-size: 1.7em;
+    font-style: normal;
+    font-family: 'Oswald', sans-serif;    
+    font-weight: 800;
+}
+#main {
+    padding: 0;
+    background-color: white;
+}
+
+#visual {
+    margin-top: 0px;
+    padding: 20px;
+    border: 10px solid #1c1c1c;
+    background-color: #1c1c1c;
+    font-size: 1.0em;
+    text-align: left;
+    color: #eebe1a; /* 원하는 색상 코드로 변경 */
+}
+#container {
+    display: flex;
+    align-items: flex-start; /* 상단 정렬 */
+    gap: 20px; /* 요소 간 간격 */
+    padding: 20px;
+  }
+  .side-image {
+    margin-top: 25px;
+    width: 100%;           /* 부모 요소 너비에 맞춤 */
+    max-width: 400px;      /* 최대 너비 설정 (원하는 크기로 조절 가능) */
+    height: auto;          /* 비율 유지 */
+    border-radius: 5px;
+}
+#mainFunction {
+    flex: 1; /* 남은 공간 채우기 */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.login-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c30405;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #8e0f23;
+}
+
+#footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+/* 기본 링크 스타일 */
+a {
+    color: white;         /* 기본 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: lighter;
+    font-size:15px;
+}
+/* 방문한 링크 스타일 */
+a:visited {
+    color: white;
+}
+/* 마우스 오버 시 스타일 */
+a:hover {
+    color: ivory;
+    text-decoration: underline;
+}
+/* 클릭(활성화) 시 스타일 */
+a:active {
+    color: green;
+}
+#weather {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 550;
+    font-size: 17px;
+    max-width: 750px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
