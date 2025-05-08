@@ -19,7 +19,7 @@
     alt="맨유 이미지" 
     style="width: 100%; height: auto; display: block;">
     <section id="visual">
-        <span style="font-size: 35px; font-weight:900">Come on, United!</span>
+        <span style="font-size: 40px; font-weight:900">Come on, United!</span>
         <br><br> It’s Europa or nothing!<br>
         Let’s bring the trophy back to Old Trafford — the reds were always meant to shine in Europe. 🔴🏆<br>
     </section>
@@ -123,6 +123,34 @@
 <footer id="footer">
     I'm also a big fan of <strong>Manchester UTD / Incheon UTD / SSG Landers</strong> ⚽⚾️
 </footer>
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const step = 0.5; // 한 번에 움직일 픽셀 수
+      const maxScroll = 20; // 최대 이동 거리
+      let current = 0;
 
+      // 아래로 스크롤
+      const down = setInterval(() => {
+        window.scrollBy(0, step);
+        current += step;
+        if (current >= maxScroll) {
+          clearInterval(down);
+
+          // 잠깐 멈췄다가 다시 위로
+          setTimeout(() => {
+            const up = setInterval(() => {
+              window.scrollBy(0, -step);
+              current -= step;
+              if (current <= 0) {
+                clearInterval(up);
+              }
+            }, 10); // 위로 올라가는 속도
+          }, 100); // 아래로 멈춘 시간
+        }
+      }, 10); // 아래로 내려가는 속도
+    }, 1000); // 시작까지 1초 대기
+  });
+</script>
 </body>
 </html>
